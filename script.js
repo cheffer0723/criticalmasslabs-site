@@ -3,6 +3,7 @@ const menu = document.querySelector('.mobile-nav');
 const dialog = document.querySelector('.project-dialog');
 const dialogTitle = document.querySelector('#dialog-title');
 const dialogStatus = document.querySelector('#dialog-status');
+const dialogFocus = document.querySelector('#dialog-focus');
 const dialogDescription = document.querySelector('#dialog-description');
 
 const closeMenu = () => {
@@ -19,6 +20,7 @@ menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', clos
 document.querySelectorAll('[data-project]').forEach((trigger) => trigger.addEventListener('click', () => {
   dialogTitle.textContent = trigger.dataset.project;
   dialogStatus.textContent = trigger.dataset.status;
+  dialogFocus.textContent = trigger.dataset.focus;
   dialogDescription.textContent = trigger.dataset.description;
   dialog.showModal();
 }));
