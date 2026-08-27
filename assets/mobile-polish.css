@@ -4,6 +4,28 @@
   box-shadow: none;
 }
 
+.desktop-nav a {
+  color: #c7c2d6;
+  font-size: 0.8rem;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a:focus-visible {
+  color: var(--text);
+}
+
+/* Fade the teal wash smoothly instead of cutting across the portrait. */
+.hero-grid::before {
+  background: linear-gradient(180deg,
+    transparent 18%,
+    rgba(48, 203, 222, 0.18) 38%,
+    rgba(48, 203, 222, 0.1) 43%,
+    transparent 50%,
+    transparent 61%,
+    rgba(48, 203, 222, 0.1) 68%,
+    transparent 75%);
+}
+
 .hero-brand {
   display: inline-flex;
   width: min(100%, 34rem);
@@ -19,6 +41,7 @@
 .hero h1 {
   font-size: clamp(1.875rem, 3.5vw, 3.125rem);
   line-height: 1;
+  word-spacing: 0.16em;
 }
 
 .hero h1 em {
@@ -31,6 +54,8 @@
 
 .hero-actions .button-primary {
   position: relative;
+  box-shadow: 0 0 0.75rem rgba(166, 93, 255, 0.45),
+    0 0 1.6rem rgba(166, 93, 255, 0.22);
 }
 
 .hero-actions .button-primary::after {
@@ -39,26 +64,26 @@
   inset: -1px;
   border-radius: inherit;
   pointer-events: none;
-  box-shadow: 0 0 0.75rem rgba(166, 93, 255, 0.7),
-    0 0 2rem rgba(166, 93, 255, 0.45);
-  opacity: 0.2;
+  box-shadow: 0 0 1rem rgba(180, 115, 255, 0.95),
+    0 0 2.75rem rgba(166, 93, 255, 0.65);
+  opacity: 0.35;
   animation: scif-glow-pulse 3.2s ease-in-out infinite;
 }
 
 @keyframes scif-glow-pulse {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.85; }
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
 }
 
 .hero-actions .button-primary:focus-visible::after {
   animation: none;
-  opacity: 0.85;
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-actions .button-primary::after {
     animation: none;
-    opacity: 0.35;
+    opacity: 0.55;
   }
 }
 
