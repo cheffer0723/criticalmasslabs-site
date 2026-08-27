@@ -21,6 +21,47 @@
   line-height: 1;
 }
 
+.hero h1 em {
+  display: inline-block;
+  padding-right: 0.12em;
+  font-size: 1.18em;
+  font-style: italic;
+  line-height: 1.12;
+}
+
+.hero-actions .button-primary {
+  position: relative;
+}
+
+.hero-actions .button-primary::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: 0 0 0.75rem rgba(166, 93, 255, 0.7),
+    0 0 2rem rgba(166, 93, 255, 0.45);
+  opacity: 0.2;
+  animation: scif-glow-pulse 3.2s ease-in-out infinite;
+}
+
+@keyframes scif-glow-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.85; }
+}
+
+.hero-actions .button-primary:focus-visible::after {
+  animation: none;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions .button-primary::after {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
 .section-heading h2,
 .featured-copy h2 {
   font-size: clamp(2.5rem, 4vw, 4.5rem);
