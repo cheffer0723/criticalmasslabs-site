@@ -1,0 +1,54 @@
+/* Project-specific feature imagery. Kept separate from the generated app bundle. */
+.featured-art {
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(3, 5, 13, 0.08), rgba(3, 5, 13, 0.18)),
+    url("/asymmetry-project.webp") 50% 58% / cover no-repeat,
+    #050711;
+}
+
+.featured-art::before {
+  z-index: 1;
+  inset: 0;
+  border: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 7, 17, 0.28), transparent 22%, transparent 78%, rgba(5, 7, 17, 0.28)),
+    linear-gradient(180deg, transparent 62%, rgba(5, 7, 17, 0.24));
+  transform: none;
+}
+
+.featured-art::after {
+  content: none;
+}
+
+.featured-art > .featured-scan,
+.featured-art > .featured-ring,
+.featured-art > .featured-cross {
+  display: none;
+}
+
+.obsidian-art {
+  background:
+    linear-gradient(180deg, rgba(2, 2, 4, 0.04), rgba(2, 2, 4, 0.12)),
+    url("/obsidian-abyss-project.webp") 50% 50% / cover no-repeat,
+    #020204;
+}
+
+.obsidian-art::before {
+  background: radial-gradient(circle at 50% 50%, transparent 26%, rgba(2, 2, 4, 0.08) 55%, rgba(2, 2, 4, 0.42) 100%);
+}
+
+.obsidian-art > .obsidian-sun,
+.obsidian-art > .obsidian-grid {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .featured-art {
+    background-position: 50% 58%;
+  }
+
+  .obsidian-art {
+    background-position: 50% 50%;
+  }
+}
