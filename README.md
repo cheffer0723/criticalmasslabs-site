@@ -1,6 +1,6 @@
 # Critical Mass Labs
 
-Static public site for [criticalmasslabs.xyz](https://criticalmasslabs.xyz), built for GitHub Pages.
+Static public site for [criticalmassfoundy.com](https://criticalmassfoundry.com), built for GitHub Pages.
 
 ## Local preview
 
